@@ -1,6 +1,7 @@
 ## Soluciones Plan B
 
 ### Instruciones
+
 Realizar las siguientes actividades sin base de datos.
 
 1. Implementar una lista tarifas en la parte izquierda de la pantalla.
@@ -10,14 +11,14 @@ Realizar las siguientes actividades sin base de datos.
 
 ### Tarifa
 
-- 0 a 15 minutos : ` 0.25 `
-- 15 a 30 mintuos: ` 0.50 `
-- 30 a 45 mintuos: ` 0.75 `
-- 45 a 60 mintuos: ` 1.00 `
+- 0 a 15 minutos : `0.25`
+- 15 a 30 mintuos: `0.50`
+- 30 a 45 mintuos: `0.75`
+- 45 a 60 mintuos: `1.00`
 
 ### Repositorio
 
-Para la resolución de la prueba técnica tiene que crear una rama con el nombre ` prueba ` y desarrollar su solución allí, una vez finalizado subir la rama a remote y realizar un pull request a la rama principal.
+Para la resolución de la prueba técnica tiene que crear una rama con el nombre `prueba` y desarrollar su solución allí, una vez finalizado subir la rama a remote y realizar un pull request a la rama principal.
 
 ### Clona el repositorio
 
@@ -34,3 +35,5 @@ npm install
 ```shell
 npm run dev
 ```
+
+### Ejemplo
