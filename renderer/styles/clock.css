@@ -1,0 +1,11 @@
+@import './base.css';
+
+
+.clock {
+    width: 35%;
+    font-family: digital; 
+    font-size: 64px;
+    background-color: var(--white-background);
+    color: var(--secondary--color);
+    text-align: center;
+}

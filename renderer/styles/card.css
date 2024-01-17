@@ -1,0 +1,262 @@
+@import './base.css';
+
+.off {
+    width: 10px;
+    height: 10px;
+    /* border-radius: 50%; */
+    background-color: var(--status--off--color);
+    margin: 0px 10px;
+}
+
+.on {
+    width: 10px;
+    height: 10px;
+    /* border-radius: 50%; */
+    background-color: var(--status--on--color);
+    margin: 0px 10px;
+}
+
+.card--container {
+    /* width: 100%; */
+    height: 89.3vh;
+    text-align: center;
+    background-color: var(--white-background);
+    color: var(--dark--color);
+}
+
+.card--title{
+    margin: 10px 0px;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.card--search {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 150px;
+    border-bottom: 1px solid var(--gray--color);
+}
+
+.card--counter {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.card--counter div {
+    padding: 20px 40px;
+    background-color: var(--secondary--color);
+}
+
+.card--counter h3 {
+    color: var(--text-color-light);
+    background-color: var(--secondary--color);
+}
+
+.card--counter div p {
+    font-size: 2rem;
+    color: var(--text-color-light);
+}
+
+.card--search-div {
+    width: 50%;
+}
+
+.card--search-div div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card--search--bar {
+    width: 35vw;
+    margin: 0px 5px;
+    box-shadow: 0px 1px 10px var(--shadow--color);
+}
+
+.card--search--search {
+    background-color: var(--primary--color);
+}
+
+.card--search--clear {
+    background-color: var(--secondary--color);
+}
+
+.card--main {
+    padding: 0px 0px;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.card--info {
+    width: 16vw;
+    border-right: 1px solid var(--gray--color);
+    padding: 5px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card--info--option {
+    width: 70px;
+    height: 70px;
+    background-color: var(--white-background);
+    border-radius: 5px;
+    margin: 5px;
+    box-shadow: 0px 3px 20px var(--shadow--color);
+}
+
+.card--info--list {
+    padding: 0px;
+    width: 100%;
+}
+
+.card--info--list--item {
+    margin: 5px 0px;
+    display: flex;
+    list-style: none;
+    font-size: 10px;
+    justify-content: space-between;
+}
+
+.card--switch {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0px;
+}
+
+.card--info--list--item p {
+    margin: 0px;
+    padding: 0px;
+}
+
+.card--form{
+    width: 50vw;
+    display: flex;
+    flex-direction: column; 
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid var(--gray--color);
+}
+
+.card--table {
+    width: 35vw;
+    height: 100%;
+    padding: 10px 10px;
+}
+
+.card--form--ouput {
+    text-align: start;
+    padding: 10px 10px;
+    width: 100%;
+    border-bottom: 1px solid var(--gray--color);
+    margin: 10px 0px;
+    color: gray;
+    font-size: 18px;
+}
+
+.card--form--input {
+    width: 60%;
+    margin: 10px 0px;
+    text-align: start;
+    font-size: 18px;
+}
+
+.card--form--input::placeholder {
+    color: rgb(105, 105, 105);
+}
+
+.card--button--jump {
+    background-color: var(--primary--color);
+    color: var(--text-color-light);
+    font-weight: bold;
+    padding: 5px 40px;
+    margin: 5px 10px;
+}
+.card--button--pay {
+    background-color: var(--primary--color);
+    color: var(--text-color-light);
+    font-weight: bold;
+    padding: 5px 40px;
+    margin: 5px 10px;
+}
+
+.plate--container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(176, 196, 222, 0.486);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.plate--content {
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+    border: 1px solid var(--gray--color);
+}
+
+.plate--content input {
+    border: none;
+    border-bottom: 1px solid var(--dark--color);
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+}
+
+.plate--content button {
+    background-color: var(--primary--color);
+    color: var(--text-color-light);
+    border: none;
+    font-weight: bold;
+    padding: 5px 40px;
+    margin: 5px 10px;
+}
+
+#desde, #hasta {
+    text-align: center;
+    font-size: 1.5rem;
+    color: black;
+}
+
+#tiempo {
+    text-align: center;
+    font-size: 2.2rem;
+    color: black;
+}
+
+#total {
+    text-align: center;
+    font-size: 2.2rem;
+    color: black;
+}
+
+#total div {
+    font-weight: bold;
+    color: red;
+}
+
+#tiempo div {
+    font-weight: bold;
+    color: red;
+}

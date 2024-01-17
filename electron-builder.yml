@@ -1,0 +1,16 @@
+appId: com.solucionesplanb.maxwell
+productName: MaxWell
+copyright: Copyright © 2023 Soluciones-Plan-B
+directories:
+  output: dist
+  buildResources: resources
+files:
+  - from: .
+    filter:
+      - package.json
+      - app
+publish: null
+linux:
+  category: business
+  icon: resources/icons/512x512.png
+  target: AppImage

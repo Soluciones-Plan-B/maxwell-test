@@ -17,7 +17,11 @@ Realizar las siguientes actividades sin base de datos.
 
 ### Repositorio
 
-Para la resolución de la prueba técnica tiene que crear una rama con el nombre `prueba` y desarrollar su solución allí, una vez finalizado subir la rama a remote y realizar un pull request a la rama principal.
+Para la resolución de la prueba técnica tiene que crear una rama con el nombre ` prueba ` y desarrollar su solución allí, una vez finalizado subir la rama a remote y realizar un pull request a la rama principal.
+
+### Clona el repositorio
+
+Clona el repositorio en tu computadora.
 
 ### Install Dependencies
 
