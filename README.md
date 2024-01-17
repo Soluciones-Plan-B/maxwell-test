@@ -37,3 +37,8 @@ npm run dev
 ```
 
 ### Ejemplo
+
+
+
+https://github.com/Soluciones-Plan-B/maxwell-test/assets/144140764/7cdbadb5-3f89-4822-affc-f15ed486a85e
+
