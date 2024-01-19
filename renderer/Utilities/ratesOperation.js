@@ -19,8 +19,6 @@ export const calculateRate = (date) => {
 
     const elapsedMinutes = (nowHours - hours) * 60 + (nowMinutes - minutes);
 
-    console.log(nowMinutes - minutes)
-
     if (elapsedMinutes <= 15) {
         result = {
             cost: 0.25,

@@ -192,6 +192,13 @@
     padding: 5px 40px;
     margin: 5px 10px;
 }
+.card--button--clean {
+    background-color: var(--status--off--color);
+    color: var(--text-color-light);
+    font-weight: bold;
+    padding: 5px 40px;
+    margin: 5px 10px;
+}
 
 .plate--container {
     width: 100%;

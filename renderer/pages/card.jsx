@@ -14,6 +14,7 @@ export default function Card() {
   const [checkOut, setCheckOut] = useState("");
   const [report, setReport] = useState([]);
   const [result, setResult] = useState(null);
+  const [complete, setComplete] = useState(false)
 
   const handleFinish = () => {
     let resultOperation = {
@@ -28,8 +29,7 @@ export default function Card() {
     const { entrada } = user;
     setCheckIn(entrada);
     setCheckOut(dateTimeNow());
-    const res = calculateRate(checkOut)
-    console.log(res)
+    const res = calculateRate(entrada)
     const { cost, durationHour, durationMinutes } = res;
 
     if ( durationHour < 0) {
@@ -46,7 +46,8 @@ export default function Card() {
       durationMinutes: durationMinutes
     }
     setResult(resultOperation);
-    aux.value = '';
+
+    setComplete(true)
   }
 
 
@@ -61,6 +62,17 @@ export default function Card() {
     ]);
     setPlaces(places-1)
     aux.value = '';
+  }
+
+  const handledClean = () => {
+    const aux = document.getElementById("card");
+    aux.value = '';
+    const updatedReport = report.filter((item) => item.codigo !== code);
+    setReport(updatedReport);
+    setCheckIn('');
+    setCheckOut('');
+    setComplete(false);
+    setResult(null);
   }
 
   return (
@@ -135,24 +147,35 @@ export default function Card() {
               <button
                   className="card--button--pay button"
                   id="card--button--pay"
-                  tabIndex="10"
+                  tabIndex="11"
                   type="button"
                   onClick={handleFinish}
               >
                 Finalizar
               </button>
+              {complete && <>
+                <button
+                    className="card--button--clean button bg-red-700"
+                    id="card--button--pay"
+                    tabIndex="12"
+                    type="button"
+                    onClick={handledClean}
+                >
+                  Limpiar
+                </button>
+              </>}
             </div>
           </form>
 
           <div className="card--table">
             <Table report={
-                report
+              report
             } ignore={[]}/>
           </div>
         </div>
 
         {isPlateBarActive && (
-          <div className="absolute top-0 bottom-0 right-0 left-0 flex justify-center items-center">
+            <div className="absolute top-0 bottom-0 right-0 left-0 flex justify-center items-center">
             <input
               id="plate-bar"
               className="w-[80vh] h-[7vh] rounded px-2 text-center border boder-solid border-blue-700 text-3xl"
