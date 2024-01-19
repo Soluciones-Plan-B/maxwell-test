@@ -7,6 +7,7 @@ import "../styles/clock.css";
 import "../styles/card.css";
 import "../styles/table.css";
 import "../styles/header.css";
+import "../styles/rates.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [cards, setCards] = useState<any>([]);

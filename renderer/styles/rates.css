@@ -1,0 +1,27 @@
+@import './base.css';
+
+
+
+.container-rates {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+
+.rates-cards {
+    border: 1px solid var(--dark--color);
+    border-radius: 5px;
+    padding: 5px 3px;
+}
+
+p {
+    color: var(--text-color-dark);
+}
+
+.rates-cards:hover {
+    box-shadow: 0 0 10px var(--primary--color);
+}
+
+.rates-cards.selected {
+    box-shadow: 0 0 10px var(--primary--color);
+}
