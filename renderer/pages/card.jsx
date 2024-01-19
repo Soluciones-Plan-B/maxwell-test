@@ -1,11 +1,67 @@
-import React, { useState} from "react";
+import React, {useEffect, useState} from "react";
 import Clock from "../Components/Clock";
 import Table from "../Components/Table";
 import Header from "../Components/Header";
 import { Trash } from "react-bootstrap-icons";
+import Rates from "../Components/Rates";
+import {dateTimeNow, calculateRate} from "../Utilities/ratesOperation.js"
 
 export default function Card() {
   const [isPlateBarActive, setIsPlateBarActive] = useState(false);
+  const [places, setPlaces] = useState(100);
+  const [code, setCode] = useState("");
+  const [checkIn, setCheckIn] = useState("");
+  const [checkOut, setCheckOut] = useState("");
+  const [report, setReport] = useState([]);
+  const [result, setResult] = useState(null);
+
+  const handleFinish = () => {
+    let resultOperation = {
+      cost: 0,
+      durationHour: "00",
+      durationMinutes: 0
+    }
+    const aux = document.getElementById("card");
+    const code = aux.value;
+    const user = report.find((item) => item.codigo === code);
+    setCode(code);
+    const { entrada } = user;
+    setCheckIn(entrada);
+    setCheckOut(dateTimeNow());
+    const res = calculateRate(checkOut)
+    console.log(res)
+    const { cost, durationHour, durationMinutes } = res;
+
+    if ( durationHour < 0) {
+      resultOperation = {
+        cost: cost,
+        durationMinutes: durationMinutes
+      }
+      return setResult(resultOperation);
+    }
+
+    resultOperation = {
+      durationHour: durationHour,
+      cost: cost,
+      durationMinutes: durationMinutes
+    }
+    setResult(resultOperation);
+    aux.value = '';
+  }
+
+
+  const handleAdd = () => {
+    const aux = document.getElementById("card");
+    const codigo = aux.value;
+    const entrada = dateTimeNow();
+    const placa = "xxxx-xxxx";
+    setReport((prevReport) => [
+      ...prevReport,
+      { codigo, entrada, placa }
+    ]);
+    setPlaces(places-1)
+    aux.value = '';
+  }
 
   return (
     <>
@@ -15,7 +71,7 @@ export default function Card() {
           <div className="card--counter">
             <div>
               <h3>Disponibles</h3>
-              {/* Agregar aqui espacios disponibles */}
+              <span className={"text-white text-3xl"}>{places}</span>
             </div>
           </div>
           <div className="card--search-div">
@@ -41,8 +97,7 @@ export default function Card() {
         <div className="card--main">
           <div className="card--info">
             {/* Implente las tarifas aqui */}
-
-
+            <Rates/>
             <div className="card--switch">
               <label htmlFor="">
                 Placa:{" "}
@@ -54,25 +109,35 @@ export default function Card() {
           </div>
           <form className="card--form">
             <span className="card--form--ouput  input" id="desde">
-              Desde: {}
+              Desde: {checkIn ? checkIn : ''}
             </span>
             <span className="card--form--ouput  input" id="hasta">
-              Hasta: {}
+              Hasta: {checkOut ? checkOut : ''}
             </span>
             <span className="card--form--ouput  input" id="tiempo">
               Tiempo:
-              <div>{}</div>
+              <div>{result ? `${result.durationHour} Horas ${result.durationMinutes} Min` : ''}</div>
             </span>
             <span className="card--form--ouput" id="total">
               Total:
-              <div>${}</div>
+              <div>${result ? ` ${result.cost}` : ''}</div>
             </span>
             <div>
               <button
-                className="card--button--pay button"
-                id="card--button--pay"
-                tabIndex="10"
-                type="button"
+                  className="card--button--pay button"
+                  id="card--button--pay"
+                  tabIndex="10"
+                  type="button"
+                  onClick={handleAdd}
+              >
+                Registrar
+              </button>
+              <button
+                  className="card--button--pay button"
+                  id="card--button--pay"
+                  tabIndex="10"
+                  type="button"
+                  onClick={handleFinish}
               >
                 Finalizar
               </button>
@@ -80,13 +145,9 @@ export default function Card() {
           </form>
 
           <div className="card--table">
-            <Table report={[
-              {
-                codigo: "xxxxxxxxxx",
-                entrada: "YYYY-MM-DD HH:mm:ss",
-                "placa": "xxxx-xxxx"
-              }
-            ]} ignore={[]} />
+            <Table report={
+                report
+            } ignore={[]}/>
           </div>
         </div>
 
